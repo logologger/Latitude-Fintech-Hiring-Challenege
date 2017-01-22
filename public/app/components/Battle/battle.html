@@ -1,0 +1,65 @@
+ 
+<!-- <div class="container main_container" > -->
+<!-- <md-card> -->
+ 
+ <!--  <div class="row" > -->
+   
+      
+   <!--  <div class="panel panel-default panel-primary" ng-repeat="w in battle.battleData"> -->
+   <p class="battle_king">Battles fought by {{battle.show}}</p>
+<!-- <md-select ng-model="battle.query[battle.name]" class="select_position">
+<md-option selected value=""> Filter based on battle type</md-option>
+<md-option value="pitched battle">
+pitched battle
+</md-option>
+<md-option value="ambush">ambush</md-option>
+<md-option value="raging">raging</md-option>
+<md-option value="siege">siege</md-option>
+</md-select> -->
+<select ng-model="battle.query[battle.name]" class="select_position form-control">
+<option selected value=""> Filter based on battle type</option>
+<option value="pitched battle">
+pitched battle
+</option>
+<option value="ambush">ambush</option>
+<option value="raging">raging</option>
+<option value="siege">siege</option>
+</select>
+
+
+   <md-card ng-repeat="w in battle.battleData |filter:battle.query" class="container main_container {{w.battle_result}}">
+    
+        <div class="panel-body" >
+      
+          <div class="row" >
+           <div class="col-md-12">
+        
+           
+       
+              <p class="heading_battle text-info">{{w.name?w.name:"Unknown"}}</p>
+              <p class="text-muted"><b><i class="fa fa-calendar-o colorit"></i>  &nbsp;&nbsp;Year:</b>&nbsp;<span class="numerals_rating">{{w.year}}</span> </p>
+              <p class="text-muted"><b><i class="fa fa-location-arrow colorit"></i> &nbsp;&nbsp;Location:</b>&nbsp;  <span class="numerals_rating">{{w.location}}</span></p>
+              <p class="text-muted"><b><i class="fa fa-globe colorit"></i> &nbsp;&nbsp;Region:</b> &nbsp;<span class="numerals_rating">{{w.region}} </span></p>
+                      <p class="text-muted"><b><i class="fa fa-map-marker colorit"></i> &nbsp;&nbsp;Battle type:</b> &nbsp; <span class="numerals_rating">{{w.battle_type}}</span></p>
+              <p class="text-muted"><b><i class="fa fa-flag colorit {{w.battle_result}}"></i> &nbsp;&nbsp;Result:</b> &nbsp;<span class="numerals_rating">{{w.battle_result}} </span></p>
+
+             <!--  <p class="text-muted"><a ui-sref="battles({'data':w.name})">See More</a></p> -->
+              
+             
+             </div> 
+        
+
+
+        </div>
+    </div>
+
+    <!-- </div> -->
+    </md-card>
+    
+    </div>
+ <!--  </div> -->
+<!--  </md-card> -->
+
+
+
+

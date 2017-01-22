@@ -1,0 +1,77 @@
+ 
+<div class="container main_container" >
+
+
+  <div class="row">
+  
+    <div class="col-md-10 col-md-offset-2">
+
+    <h2 class="register_header">Registration form</h2>
+
+       <form class="">
+            <div class="form-group">
+              <label for="full_name">Full Name:</label>
+              <input type="text" ng-model="main.form.full_name" class="form-control" id="name" placeholder="e.g. Rajat Singh">
+            </div>
+            <div class="form-group">
+              <label for="mobile">Mobile:</label>
+              <input type="text" class="form-control" ng-model="main.form.mobile" id="mobile" placeholder="+91">
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" ng-model="main.form.email"  id="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="id_card">Upload ID Card:</label>
+                <input 
+               type="file" 
+               ngf-select 
+               ng-model="main.id_card" 
+               name="file" 
+               ngf-pattern="'image/*'"
+               accept="image/*" 
+               ngf-max-size="20MB" 
+               />
+            Image thumbnail: <img style="width:100px;" ngf-thumbnail="main.id_card || 'assets/image/thumb.png'"/>
+            <i ng-show="main.upload_form.file.$error.required">*required</i><br>
+            <i ng-show="main.upload_form.file.$error.maxSize">File too large 
+            {{main.file.size / 1000000|number:1}}MB: max 20M</i>
+           
+            <p>{{main.progress}}</p>
+             <!--  <input type="file"  id="id_card"  ng-click="main.uploadImage()"> -->
+            </div>
+            <div class="form-group">
+              <label for="registration">Registration Type:</label>
+              <select id="type" ng-model="main.form.type">
+                   <option value="" selected>--select--</option>
+
+                  <option value="self" selected>Self</option>
+                  <option value="coporate">Coporate</option>
+                  <option value="group">Group</option>
+                  <option value="others">Others</option>
+           </select>
+
+            </div>
+            <div class="form-group">
+              <label for="pwd">No. of tickets:</label>
+              <select id="tickets" ng-model="main.form.tickets">
+                <option value="" selected>--select--</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary" ng-click="main.preview()">Preview</button>
+            <button type="submit" class="btn btn-primary" ng-click="main.submitForm()">Submit</button>
+</form>
+    
+    </div>
+  
+  </div>
+  </div>
+
+
+   
+   
+
