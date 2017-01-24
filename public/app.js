@@ -1,4 +1,4 @@
-var app=angular.module("myApp",['mainController','BattleController','ngAnimate', 'ui.router','CommonData','ngMaterial','ngMessages','SharedServiceFactoryModule','mainService','ngFileUpload'])
+var app=angular.module("myApp",['mainController','ngAnimate','nvd3','TypeController','ui.router','CommonData','ngMaterial','ngMessages','SharedServiceFactoryModule','mainService','ngFileUpload'])
 
 
 .config(function($stateProvider, $urlRouterProvider,$httpProvider)
@@ -12,11 +12,11 @@ var app=angular.module("myApp",['mainController','BattleController','ngAnimate',
             controllerAs:'main'
         })
 
-          .state('battles', {
-            url: '/battle?data',
-            templateUrl:'app/components/Battle/battle.html',
-            controller:'battleController',
-            controllerAs:'battle'
+          .state('showTypePie', {
+            url: '/type',
+            templateUrl:'app/components/Type/type.html',
+            controller:'typeController',
+            controllerAs:'typePie'
             
         });
 
