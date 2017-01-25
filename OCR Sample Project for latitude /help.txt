@@ -1,0 +1,3 @@
+view-source:https://kdzwinel.github.io/JS-OCR-demo/
+
+https://github.com/Jbays/orpix-demo
